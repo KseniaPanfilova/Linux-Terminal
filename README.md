@@ -4,6 +4,7 @@ Here are terminals commands that I've mastered and can use in my work.
 The document is built on the principle of task - answer.
 
 ### Work with files and file system:
+
 1. Using `echo` with the necessary key, output the text “Script1 Script2 Script3” to the console in three lines.
 ```sh
 echo -e "Script1\nScript2\nScript3"
@@ -66,4 +67,79 @@ cd ~/move/folder1/folder2/folder3 && pwd
 12. Find the file(s) in the /etc directory that contain the word "release" in their name.
 ```sh
 find /etc -type f -name "*release*"
+```
+
+### Work with users, groups and file permissions:
+
+1. Create a new user lastname-user1.
+```sh
+sudo useradd panfilova-user1
+```
+
+2. Set him a new password.
+```sh
+sudo usermod -p 123456 panfilova-user1
+```
+
+3. Create a group lastname-group1.
+```sh
+sudo groupadd panfilova-group1
+```
+
+4. Set lastname-group1 as primary for lastname-user1.
+```sh
+sudo usermod -g panfilova-group1 panfilova-user1
+```
+
+5. Add the ability to use `sudo` for the user lastname-user1.
+```sh
+sudo usermod -a -G sudo panfilova-user1
+```
+
+6. Create an empty file lastname-homework and view its permissions.
+```sh
+touch panfilova-homework && ls -l
+```
+
+7. Set permissions for file lastname-homework: owner - all rights, group - read, others - read and execute.
+```sh
+sudo chmod 745 panfilova-homework
+```
+
+8. Change the owner of the file lastname-homework to lastname-user1.
+```sh
+sudo chown panfilova-user1 panfilova-homework
+```
+
+### Working with the APT:
+
+1. Add repository *ppa:alexx2000/doublecmd*.
+```sh
+sudo add-apt-repository ppa:alexx2000/doublecmd
+```
+
+2. Get information about *doublecmd* from repositories.
+```sh
+sudo apt-get update
+```
+
+3. Install *doublecmd* and *nginx* with `apt-get`.
+```sh
+sudo apt-get install doublecmd
+sudo apt-get install ngnix
+```
+
+4. Get information about all packages installed on the system.
+```sh
+apt list --installed
+```
+
+5. Remove *doublecmd*.
+```sh
+sudo apt-get remove doublecmd
+```
+
+6. Delete *doublecmd* configuration files.
+```sh
+sudo apt-get purge doublecmd
 ```
