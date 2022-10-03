@@ -111,7 +111,7 @@ sudo chmod 745 panfilova-homework
 sudo chown panfilova-user1 panfilova-homework
 ```
 
-### Working with the APT:
+### Work with the APT:
 
 1. Add repository *ppa:alexx2000/doublecmd*.
 ```sh
